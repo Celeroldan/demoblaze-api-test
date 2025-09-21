@@ -1,0 +1,28 @@
+**Conclusiones del ejercicio API DemoBlaze
+
+**Se cumplieron todos los requisitos del ejercicio:
+
+- Se utilizaron pruebas automatizadas con Karate para validar los servicios REST de DemoBlaze.
+- Se probaron los endpoints `/signup` y `/login` con distintos casos de uso.
+- Se capturaron las entradas (usuario y contraseña) y las salidas (respuesta JSON con campo `error`).
+- Los resultados fueron validados con aserciones y reportados en consola y HTML.
+
+**Observaciones técnicas:
+
+- El endpoint `/signup` responde con `error: false` al crear un usuario nuevo, y con `error: true` si el usuario ya existe.
+- El endpoint `/login` responde con `error: false` si las credenciales son correctas, y con `error: true` si son incorrectas.
+- Karate permite estructurar pruebas claras, reproducibles y fáciles de mantener.
+
+*Resultado final:
+
+El proyecto está documentado, estructurado y listo para ser ejecutado por cualquier persona con Maven y Java. Se puede compartir públicamente como ejemplo de pruebas API funcionales con Karate.
+
+***Revisión de requisitos solicitados
+Usar software para pruebas de servicios REST ------>	Karate ejecuta peticiones POST a los endpoints REST
+Probar el servicio signup en https://api.demoblaze.com/sign ------>	signup.feature contiene dos escenarios que usan ese endpoint
+Probar el servicio login en https://api.demoblaze.com/login ------>	login.feature contiene dos escenarios que usan ese endpoint
+Crear un nuevo usuario en signup ------>	Primer escenario de signup.feature con error: false
+Intentar crear un usuario ya existente ------>	Segundo escenario de signup.feature con error: true
+Usuario y password correctos en login ------>	Primer escenario de login.feature con error: false
+Usuario y password incorrectos en login ------>	Segundo escenario de login.feature con error: true
+Capturar entradas y salidas ------>	Se usa request { ... } y print response en cada escenario
